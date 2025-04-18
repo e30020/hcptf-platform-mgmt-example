@@ -13,7 +13,7 @@ module "random_pets_project" {
   source  = "alexbasista/projecter/tfe"
   version = "0.1.1"
 
-  organization = var.organization
+  organization = "hashicorp_org_tel_sec"
   project_name = "random-pets-application"
 
   team_access = {

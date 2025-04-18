@@ -20,14 +20,15 @@ module "random_pets_project" {
     platform-team        = "admin"
     random-pets-app-team = "write"
   }
-  module "random_pets_1_mgmt_ws" {
-    source  = "alexbasista/workspacer/tfe"
-    version = "0.12.0"
+}
 
-    organization   = var.organization
-    workspace_name = "random-pets-mgmt-ws"
-    workspace_desc = "Workspace mananging all other Workspaces in this project as code."
-    workspace_tags = ["mgmt"]
-    project_name   = "random-pets-application"
-  }
+module "random_pets_1_mgmt_ws" {
+  source  = "alexbasista/workspacer/tfe"
+  version = "0.12.0"
+
+  organization   = var.organization
+  workspace_name = "random-pets-mgmt-ws"
+  workspace_desc = "Workspace mananging all other Workspaces in this project as code."
+  workspace_tags = ["mgmt"]
+  project_name   = "random-pets-application"
 }
